@@ -1,0 +1,22 @@
+# Vscode
+.vscode/
+
+# Valgrind
+vgcore.*
+
+# Cmake
+build/
+
+# Files Created
+demo/demo
+libECS.a
+libsparray.a
+libmaths.a
+
+# Doc
+latex/
+html/
+doxyfile
+
+# Local Tests
+*_test*
