@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2025
 ** ECS
 ** File description:
-** ig_cmpts.hpp
+** in_game.cpmt.hpp
 */
 
 #ifndef IN_GAME_CMPT_HPP_

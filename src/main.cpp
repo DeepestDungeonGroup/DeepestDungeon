@@ -5,10 +5,10 @@
 ** main.cpp
 */
 
-#include <SFML/Graphics/RenderWindow.hpp>
 #include <memory>
+#include <SFML/Graphics/RenderWindow.hpp>
 
-#include "scenes/InGame.hpp"
+#include "scenes/in_game/InGame.hpp"
 
 int main(int, const char **)
 {

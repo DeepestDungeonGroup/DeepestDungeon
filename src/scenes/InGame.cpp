@@ -5,10 +5,10 @@
 ** InGame.cpp
 */
 
-#include "scenes/InGame.hpp"
+#include "scenes/in_game/InGame.hpp"
 
-#include "components/ig_cmpts.hpp"
-#include "systems/ig_sys.hpp"
+#include "scenes/in_game/in_game.cpmt.hpp"
+#include "scenes/in_game/in_game.sys.hpp"
 
 InGame::InGame()
 {

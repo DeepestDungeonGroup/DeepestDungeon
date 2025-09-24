@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2025
 ** ECS
 ** File description:
-** ig_sys.hpp
+** in_game.sys.hpp
 */
 
 #ifndef IN_GAME_SYS_HPP_
