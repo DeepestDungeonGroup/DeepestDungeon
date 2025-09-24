@@ -22,7 +22,6 @@ void InGame::setECS(void)
     _reg.registerComponent<Position2>();
     _reg.registerComponent<Velocity2>();
     _reg.registerComponent<Sprite>();
-    _reg.registerComponent<Drawable>();
     _reg.registerComponent<Window>();
     _reg.registerComponent<Player>();
 

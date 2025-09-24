@@ -43,7 +43,7 @@ void manageEvent(ECS::Registry& reg)
     std::optional<std::reference_wrapper<Window>> opt_win = findActiveWindow(reg.getComponents<Window>());
     if (!opt_win.has_value())
         return;
-        
+
     sf::Event event = {};
     std::reference_wrapper<Window> win = opt_win.value();
     

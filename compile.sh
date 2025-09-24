@@ -2,7 +2,7 @@ clear
 if [[ $1 == "re" ]]
 then
     echo "------------RE-BUILD"------------
-    rm -rf ./build/ ./*.a
+    rm -rf ./build/ ./demo
     mkdir ./build/ && cd ./build/
     cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
     cmake --build .
@@ -12,7 +12,7 @@ then
 elif [[ $1 == "d" ]]
 then
     echo ""------------DEBUG"------------"
-    rm -rf ./build/ ./*.a
+    rm -rf ./build/ ./demo
     mkdir ./build/ && cd ./build/
     cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
     cmake --build . -v
@@ -22,7 +22,7 @@ then
 elif [[ $1 == "c" ]]
 then
     echo "------------CLEAR------------"
-    rm -rf ./build/ ./*.a
+    rm -rf ./build/ ./demo
     echo "------------END------------"
 
 else

@@ -8,10 +8,8 @@ vgcore.*
 build/
 
 # Files Created
-demo/demo
-libECS.a
-libsparray.a
-libmaths.a
+deepest_dungeon
+ECS/libECS.a
 
 # Doc
 latex/
