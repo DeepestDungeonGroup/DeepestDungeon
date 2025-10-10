@@ -16,6 +16,7 @@ add_subdirectory(ECS)
 ########## BINARY ##########
 add_executable( ${PROJECT_NAME}
     ${SRC_DIR}main.cpp
+    ${SRC_DIR}map_reader.cpp
 
     # components
     ${SRC_DIR}components/position.cpp

@@ -12,15 +12,17 @@
     #include <vector>
 
     #include "scenes/AScene.hpp"
+    #include "map_management.hpp"
     
     #define PLAYER_SPRITE_PATH "assets/test.png"
 
+    #define DEFAULT_MAP_PATH "assets/maps/test.ddmap"
+
 enum IG_entities_e : ECS::Entity {
     MAIN_WINDOW = 0,
-    PLAYER,
-    BACKGROUND_1,
-    BACKGROUND_2,
-    BACKGROUND_3,
+    PLAYER = MAP_ENTITY_PLAYER,
+    MIN_BG = MAP_ENTITY_BACKGROUND,
+    MAX_BG = MAP_ENTITY_BACKGROUND+ MAP_MAX_HEIGHT * MAP_MAX_WIDTH,
 };
     
     /**
