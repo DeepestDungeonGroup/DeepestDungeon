@@ -24,6 +24,7 @@ void InGame::setECS(void)
     _reg.registerComponent<Sprite>();
     _reg.registerComponent<Window>();
     _reg.registerComponent<Player>();
+    _reg.registerComponent<Hitbox>();
 
     _reg.addSystem(&movement2_sys);
     _reg.addSystem(&manageEvent);
@@ -37,12 +38,22 @@ void InGame::setEntities(void)
     _reg.addComponent(MAIN_WINDOW, Window());
     _reg.addComponent(PLAYER, Drawable());
     _reg.addComponent(PLAYER, Position2(100.0f, 100.0f));
-    _reg.addComponent(PLAYER, Sprite(PLAYER_SPRITE_PATH));
+    _reg.addComponent(PLAYER, Sprite(sf::IntRect(0, 0, 30, 30), sf::Color::Blue));
     _reg.addComponent(PLAYER, Velocity2(0.0f, 0.0f));
     _reg.addComponent(PLAYER, Player());
-    _reg.addComponent(BACKGROUND, Drawable());
-    _reg.addComponent(BACKGROUND, Position2(0.0f, 0.0f));
-    _reg.addComponent(BACKGROUND, Sprite(sf::IntRect(0, 0, 20, 20), sf::Color::Red));
+    _reg.addComponent(PLAYER, Hitbox(0.0f, 0.0f, 30.0f, 30.0f));
+    _reg.addComponent(BACKGROUND_1, Drawable());
+    _reg.addComponent(BACKGROUND_1, Position2(0.0f, 0.0f));
+    _reg.addComponent(BACKGROUND_1, Sprite(sf::IntRect(0, 0, 20, 20), sf::Color::Red));
+    _reg.addComponent(BACKGROUND_1, Hitbox(0.0f, 0.0f, 20.0f, 20.0f));
+    _reg.addComponent(BACKGROUND_2, Drawable());
+    _reg.addComponent(BACKGROUND_2, Position2(20.0f, 10.0f));
+    _reg.addComponent(BACKGROUND_2, Sprite(sf::IntRect(0, 0, 20, 20), sf::Color::Red));
+    _reg.addComponent(BACKGROUND_2, Hitbox(0.0f, 0.0f, 20.0f, 20.0f));
+    _reg.addComponent(BACKGROUND_3, Drawable());
+    _reg.addComponent(BACKGROUND_3, Position2(-5.0f, 15.0f));
+    _reg.addComponent(BACKGROUND_3, Sprite(sf::IntRect(0, 0, 20, 20), sf::Color::Red));
+    _reg.addComponent(BACKGROUND_3, Hitbox(0.0f, 0.0f, 20.0f, 20.0f));
 }
 
 void InGame::run(void)

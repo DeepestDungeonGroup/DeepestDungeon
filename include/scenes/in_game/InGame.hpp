@@ -18,7 +18,9 @@
 enum IG_entities_e : ECS::Entity {
     MAIN_WINDOW = 0,
     PLAYER,
-    BACKGROUND,
+    BACKGROUND_1,
+    BACKGROUND_2,
+    BACKGROUND_3,
 };
     
     /**

@@ -14,5 +14,6 @@
     #include "components/velocity.hpp"
     #include "components/sprite.hpp"
     #include "components/player.hpp"
+    #include "components/hitbox.hpp"
 
 #endif
