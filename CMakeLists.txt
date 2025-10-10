@@ -28,6 +28,7 @@ add_executable( ${PROJECT_NAME}
     ${SRC_DIR}systems/event.cpp
     ${SRC_DIR}systems/movement.cpp
     ${SRC_DIR}systems/draw.cpp
+    ${SRC_DIR}systems/view_player.cpp
 
     # scenes
     ${SRC_DIR}scenes/InGame.cpp

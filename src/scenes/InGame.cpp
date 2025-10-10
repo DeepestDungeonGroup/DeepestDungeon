@@ -27,6 +27,7 @@ void InGame::setECS(void)
 
     _reg.addSystem(&movement2_sys);
     _reg.addSystem(&manageEvent);
+    _reg.addSystem(&follow_player_sys);
     _reg.addSystem(&draw_sys);
     _reg.addSystem(&display_sys);
 }
@@ -39,6 +40,9 @@ void InGame::setEntities(void)
     _reg.addComponent(PLAYER, Sprite(PLAYER_SPRITE_PATH));
     _reg.addComponent(PLAYER, Velocity2(0.0f, 0.0f));
     _reg.addComponent(PLAYER, Player());
+    _reg.addComponent(BACKGROUND, Drawable());
+    _reg.addComponent(BACKGROUND, Position2(0.0f, 0.0f));
+    _reg.addComponent(BACKGROUND, Sprite(sf::IntRect(0, 0, 20, 20), sf::Color::Red));
 }
 
 void InGame::run(void)

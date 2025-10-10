@@ -14,6 +14,7 @@
 
 struct Sprite : public sf::Sprite {
     Sprite() = default;
+    Sprite(const sf::IntRect&, const sf::Color&);
     Sprite(const std::string&);
     Sprite(const Sprite&);
     Sprite(Sprite&&);

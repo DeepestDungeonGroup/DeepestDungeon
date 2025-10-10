@@ -13,6 +13,15 @@ Sprite::Sprite(const std::string& path)
     setTexture(texture);
 }
 
+Sprite::Sprite(const sf::IntRect& rect, const sf::Color& color)
+{
+    sf::Image image;
+
+    image.create(rect.width, rect.height, color);
+    texture.loadFromImage(image, rect);
+    setTexture(texture);
+}
+
 Sprite::Sprite(Sprite&& sprite)
 {
     texture = sprite.texture;
