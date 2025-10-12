@@ -24,6 +24,7 @@ add_executable( ${PROJECT_NAME}
     ${SRC_DIR}components/sprite.cpp
     ${SRC_DIR}components/window.cpp
     ${SRC_DIR}components/hitbox.cpp
+    ${SRC_DIR}components/clock.cpp
 
     # systems
     ${SRC_DIR}systems/display.cpp

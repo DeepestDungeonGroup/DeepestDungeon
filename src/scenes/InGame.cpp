@@ -9,6 +9,7 @@
 
 #include "scenes/in_game/in_game.cpmt.hpp"
 #include "scenes/in_game/in_game.sys.hpp"
+#include "components/clock.hpp"
 
 InGame::InGame()
 {
@@ -41,7 +42,11 @@ void InGame::setEntities(void)
 
 void InGame::run(void)
 {
+    struct Clock clock(CLOCK_RATE);
+
     while (MAIN_WIN_EXIST && MAIN_WIN_ISOPEN) {
-        _reg.runSystems();
+        if (clock.checkCooldown()) {
+            _reg.runSystems();
+        }
     }
 }
