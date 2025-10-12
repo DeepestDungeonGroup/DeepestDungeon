@@ -37,6 +37,11 @@ static void create_square(ECS::Registry& reg, char type, const sf::Vector2u& pos
         reg.addComponent(entity_id, Position2(pos.x * SQUARE_WIDTH, pos.y * SQUARE_HEIGHT));
         reg.addComponent(entity_id, Sprite(sf::IntRect(0, 0, SQUARE_WIDTH, SQUARE_HEIGHT), sf::Color::Red));
         reg.addComponent(entity_id, Hitbox(0.0f, 0.0f, SQUARE_WIDTH, SQUARE_WIDTH));
+    } else if (type == MAP_DOOR) {
+        reg.addComponent(entity_id, Drawable());
+        reg.addComponent(entity_id, Position2(pos.x * SQUARE_WIDTH, pos.y * SQUARE_HEIGHT));
+        reg.addComponent(entity_id, Sprite(sf::IntRect(0, 0, SQUARE_WIDTH, SQUARE_HEIGHT), sf::Color::Yellow));
+        reg.addComponent(entity_id, Hitbox(0.0f, 0.0f, SQUARE_WIDTH, SQUARE_WIDTH));
     } else if (type == MAP_PLAYER) {
         load_player(reg, pos);
     }

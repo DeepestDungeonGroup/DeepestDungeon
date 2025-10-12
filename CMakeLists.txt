@@ -17,6 +17,7 @@ add_subdirectory(ECS)
 add_executable( ${PROJECT_NAME}
     ${SRC_DIR}main.cpp
     ${SRC_DIR}map_reader.cpp
+    ${SRC_DIR}hitbox_management.cpp
 
     # components
     ${SRC_DIR}components/position.cpp

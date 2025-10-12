@@ -15,7 +15,7 @@
     #include "map_management.hpp"
 
     #define PLAYER_SPRITE_PATH "assets/test.png"
-    #define DEFAULT_MAP_PATH "assets/maps/test.ddmap"
+    #define DEFAULT_MAP_PATH "assets/maps/test1.ddmap"
     #define CLOCK_RATE 1000 / DEFAULT_FRAME_LIMIT
 
 enum IG_entities_e : ECS::Entity {

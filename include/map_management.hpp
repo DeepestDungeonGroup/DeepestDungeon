@@ -28,6 +28,7 @@ void load_map(ECS::Registry& reg, const std::string& path);
 enum MAP_TYPES : char {
     MAP_WALL = 'X',
     MAP_PLAYER = 'P',
+    MAP_DOOR = 'D',
 };
 
 #endif
