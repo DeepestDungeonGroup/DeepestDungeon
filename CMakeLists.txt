@@ -16,7 +16,7 @@ add_subdirectory(ECS)
 ########## BINARY ##########
 add_executable( ${PROJECT_NAME}
     ${SRC_DIR}main.cpp
-    ${SRC_DIR}map_reader.cpp
+    ${SRC_DIR}map_management.cpp
     ${SRC_DIR}hitbox_management.cpp
 
     # components
@@ -26,6 +26,7 @@ add_executable( ${PROJECT_NAME}
     ${SRC_DIR}components/window.cpp
     ${SRC_DIR}components/hitbox.cpp
     ${SRC_DIR}components/clock.cpp
+    ${SRC_DIR}components/interactive.cpp
 
     # systems
     ${SRC_DIR}systems/display.cpp
@@ -33,6 +34,7 @@ add_executable( ${PROJECT_NAME}
     ${SRC_DIR}systems/movement.cpp
     ${SRC_DIR}systems/draw.cpp
     ${SRC_DIR}systems/view_player.cpp
+    ${SRC_DIR}systems/map.cpp
 
     # scenes
     ${SRC_DIR}scenes/InGame.cpp

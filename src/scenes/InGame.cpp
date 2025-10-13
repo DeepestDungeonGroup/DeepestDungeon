@@ -26,8 +26,10 @@ void InGame::setECS(void)
     _reg.registerComponent<Window>();
     _reg.registerComponent<Player>();
     _reg.registerComponent<Hitbox>();
+    _reg.registerComponent<Interactive>();
 
     _reg.addSystem(&movement2_sys);
+    _reg.addSystem(&player_interaction_sys);
     _reg.addSystem(&manageEvent);
     _reg.addSystem(&follow_player_sys);
     _reg.addSystem(&draw_sys);
@@ -37,7 +39,7 @@ void InGame::setECS(void)
 void InGame::setEntities(void)
 {
     _reg.addComponent(MAIN_WINDOW, Window());
-    load_map(_reg, DEFAULT_MAP_PATH);
+    load_map(_reg, MAPS_PATHS.at("test1"));
 }
 
 void InGame::run(void)

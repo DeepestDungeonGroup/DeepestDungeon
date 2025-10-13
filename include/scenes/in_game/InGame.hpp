@@ -15,14 +15,13 @@
     #include "map_management.hpp"
 
     #define PLAYER_SPRITE_PATH "assets/test.png"
-    #define DEFAULT_MAP_PATH "assets/maps/test1.ddmap"
     #define CLOCK_RATE 1000 / DEFAULT_FRAME_LIMIT
 
 enum IG_entities_e : ECS::Entity {
     MAIN_WINDOW = 0,
     PLAYER = MAP_ENTITY_PLAYER,
     MIN_BG = MAP_ENTITY_BACKGROUND,
-    MAX_BG = MAP_ENTITY_BACKGROUND+ MAP_MAX_HEIGHT * MAP_MAX_WIDTH,
+    MAX_BG = MAP_MAX_ENTITY_BACKGROUND,
 };
     
     /**

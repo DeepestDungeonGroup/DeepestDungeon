@@ -13,5 +13,6 @@
     #include "systems/draw.hpp"
     #include "systems/display.hpp"
     #include "systems/view_player.hpp"
+    #include "systems/map.hpp"
 
 #endif

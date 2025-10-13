@@ -15,5 +15,6 @@
     #include "components/sprite.hpp"
     #include "components/player.hpp"
     #include "components/hitbox.hpp"
+    #include "components/interactive.hpp"
 
 #endif
