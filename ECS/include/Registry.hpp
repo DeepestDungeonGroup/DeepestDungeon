@@ -23,6 +23,12 @@ class Registry {
         template <typename Component>
         SparseArray<Component>& registerComponent() {
             _component_array.insert_or_assign(std::type_index(typeid(Component)), SparseArray<Component>());
+            _remover.push_back([](Registry& reg, const Entity& e){
+                auto& cmpt = reg.getComponents<Component>();
+                if (cmpt.size() >= e && cmpt[e].has_value()) {
+                    cmpt[e].reset();
+                }
+            });
             return std::any_cast<SparseArray<Component>&>(_component_array.at(std::type_index(typeid(Component))));
         }
 
