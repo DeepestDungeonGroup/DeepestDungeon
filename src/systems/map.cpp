@@ -28,7 +28,7 @@ static void interaction_hitbox(ECS::Registry& reg)
 
 void player_interaction_sys(ECS::Registry& reg)
 {
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Scancode::E)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)) {
         interaction_hitbox(reg);
     }
 }
