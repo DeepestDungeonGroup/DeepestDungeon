@@ -8,6 +8,7 @@
 #include <vector>
 #include <fstream>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Image.hpp>
 
 #include "map_management.hpp"
 
@@ -23,7 +24,7 @@ static void load_player(ECS::Registry& reg, const sf::Vector2u& pos)
 {
     reg.addComponent(MAP_ENTITY_PLAYER, Drawable());
     reg.addComponent(MAP_ENTITY_PLAYER, Position2(pos.x * SQUARE_WIDTH, pos.y * SQUARE_HEIGHT));
-    reg.addComponent(MAP_ENTITY_PLAYER, Sprite(sf::IntRect(0, 0, 30, 30), sf::Color::Blue));
+    reg.addComponent(MAP_ENTITY_PLAYER, Sprite(TEXTURE_MAP.at(MAP_PLAYER)));
     reg.addComponent(MAP_ENTITY_PLAYER, Velocity2(0.0f, 0.0f));
     reg.addComponent(MAP_ENTITY_PLAYER, Player());
     reg.addComponent(MAP_ENTITY_PLAYER, Hitbox(0.0f, 0.0f, 30.0f, 30.0f));
@@ -35,12 +36,12 @@ static void create_square(ECS::Registry& reg, const ECS::Entity& entity_id, char
     if (type == MAP_WALL) {
         reg.addComponent(entity_id, Drawable());
         reg.addComponent(entity_id, Position2(pos.x * SQUARE_WIDTH, pos.y * SQUARE_HEIGHT));
-        reg.addComponent(entity_id, Sprite(sf::IntRect(0, 0, SQUARE_WIDTH, SQUARE_HEIGHT), sf::Color::Red));
+        reg.addComponent(entity_id, Sprite(TEXTURE_MAP.at(MAP_WALL)));
         reg.addComponent(entity_id, Hitbox(0.0f, 0.0f, SQUARE_WIDTH, SQUARE_WIDTH));
     } else if (type == MAP_DOOR) {
         reg.addComponent(entity_id, Drawable());
         reg.addComponent(entity_id, Position2(pos.x * SQUARE_WIDTH, pos.y * SQUARE_HEIGHT));
-        reg.addComponent(entity_id, Sprite(sf::IntRect(0, 0, SQUARE_WIDTH, SQUARE_HEIGHT), sf::Color::Yellow));
+        reg.addComponent(entity_id, Sprite(TEXTURE_MAP.at(MAP_DOOR)));
         reg.addComponent(entity_id, Hitbox(0.0f, 0.0f, SQUARE_WIDTH, SQUARE_WIDTH));
         reg.addComponent(entity_id, Interactive(-15.0f, -15.0f, 60.0f, 60.0f, [](ECS::Registry& reg){
             reg.killEntity(MAP_ENTITY_PLAYER);

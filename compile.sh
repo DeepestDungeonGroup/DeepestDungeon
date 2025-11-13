@@ -1,28 +1,28 @@
 clear
-if [[ $1 == "re" ]]
+if [[ $1 == "-re" ]]
 then
     echo "------------RE-BUILD"------------
-    rm -rf ./build/ ./demo
+    rm -rf ./build ./deepest_dungeon
     mkdir ./build/ && cd ./build/
-    cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+    cmake ..
     cmake --build .
     cd ..
     echo "------------END------------"
 
-elif [[ $1 == "d" ]]
+elif [[ $1 == "-d" ]]
 then
     echo ""------------DEBUG"------------"
-    rm -rf ./build/ ./demo
+    rm -rf ./build ./deepest_dungeon
     mkdir ./build/ && cd ./build/
-    cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
+    cmake .. -DCMAKE_BUILD_TYPE=Debug
     cmake --build . -v
     cd ..
     echo "------------END------------"
 
-elif [[ $1 == "c" ]]
+elif [[ $1 == "-c" ]]
 then
     echo "------------CLEAR------------"
-    rm -rf ./build/ ./demo
+    rm -rf ./build/ ./deepest_dungeon
     echo "------------END------------"
 
 else
@@ -30,10 +30,9 @@ else
     if [ ! -d "./build/" ]
     then
         mkdir ./build/ && cd ./build/
-        cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+        cmake ..
         cd ..
-    else
-        cmake --build ./build/
     fi
+    cmake --build ./build/
     echo "------------END------------"
 fi

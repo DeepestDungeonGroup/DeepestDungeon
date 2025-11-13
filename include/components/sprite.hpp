@@ -8,18 +8,11 @@
 #ifndef SPRITE_HPP_
     #define SPRITE_HPP_
 
-    #include <string>
-    #include <SFML/Graphics/Texture.hpp>
     #include <SFML/Graphics/Sprite.hpp>
+    #include <SFML/Graphics/Texture.hpp>
 
 struct Sprite : public sf::Sprite {
-    Sprite() = default;
-    Sprite(const sf::IntRect&, const sf::Color&);
-    Sprite(const std::string&);
-    Sprite(const Sprite&);
-    Sprite(Sprite&&);
-
-    sf::Texture texture;
+    Sprite(const sf::Texture& texture) : sf::Sprite(texture) {};
 };
 
 #endif

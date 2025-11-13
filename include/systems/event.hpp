@@ -15,10 +15,10 @@
     #include "Registry.hpp"
 
 enum player_movement_e {
-    P_LEFT_MOV = sf::Keyboard::Q,
-    P_RIGHT_MOV = sf::Keyboard::D,
-    P_TOP_MOV = sf::Keyboard::Z,
-    P_BOT_MOV = sf::Keyboard::S,
+    P_LEFT_MOV = int(sf::Keyboard::Scancode::Q),
+    P_RIGHT_MOV = int(sf::Keyboard::Scancode::D),
+    P_TOP_MOV = int(sf::Keyboard::Scancode::Z),
+    P_BOT_MOV = int(sf::Keyboard::Scancode::S),
 };
 
     #define P_MOV_FACTOR 3.0f

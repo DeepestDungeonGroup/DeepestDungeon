@@ -13,13 +13,13 @@ Window::Window() : sf::RenderWindow(DEFAULT_VIDEO_MODE, DEFAULT_WIN_NAME)
     name = DEFAULT_WIN_NAME;
 }
 
-Window::Window(const Window& win) : sf::RenderWindow(sf::VideoMode{win.getSize().x, win.getSize().y}, win.name)
+Window::Window(const Window& win) : sf::RenderWindow(sf::VideoMode(sf::Vector2u(win.getSize().x, win.getSize().y)), win.name)
 {
     setFramerateLimit(DEFAULT_FRAME_LIMIT);
     name = win.name;
 }
 
-Window::Window(Window&& win) : sf::RenderWindow(sf::VideoMode{win.getSize().x, win.getSize().y}, win.name)
+Window::Window(Window&& win) : sf::RenderWindow(sf::VideoMode(sf::Vector2u(win.getSize().x, win.getSize().y)), win.name)
 {
     setFramerateLimit(DEFAULT_FRAME_LIMIT);
     name = win.name;

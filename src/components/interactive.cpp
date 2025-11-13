@@ -9,27 +9,27 @@
 
 Interactive::Interactive(const sf::FloatRect& rect, const interactive_func& func)
 {
-    hitbox.height = rect.height;
-    hitbox.width = rect.width;
-    hitbox.top = rect.top;
-    hitbox.left = rect.left;
+    hitbox.size.y = rect.size.y;
+    hitbox.size.x = rect.size.x;
+    hitbox.position.y = rect.position.y;
+    hitbox.position.x = rect.position.x;
     event = func;
 }
 
 Interactive::Interactive(const sf::Vector2f& pos, const sf::Vector2f& size, const interactive_func& func)
 {
-    hitbox.height = size.y;
-    hitbox.width = size.x;
-    hitbox.top = pos.y;
-    hitbox.left = pos.x;
+    hitbox.size.y = size.y;
+    hitbox.size.x = size.x;
+    hitbox.position.y = pos.y;
+    hitbox.position.x = pos.x;
     event = func;
 }
 
 Interactive::Interactive(float left, float top, float width, float height, const interactive_func& func)
 {
-    hitbox.height = height;
-    hitbox.width = width;
-    hitbox.top = top;
-    hitbox.left = left;
+    hitbox.size.y = height;
+    hitbox.size.x = width;
+    hitbox.position.y = top;
+    hitbox.position.x = left;
     event = func;
 }

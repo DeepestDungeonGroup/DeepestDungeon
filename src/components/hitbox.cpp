@@ -9,24 +9,24 @@
 
 Hitbox::Hitbox(const sf::FloatRect& rect)
 {
-    this->height = rect.height;
-    this->width = rect.width;
-    this->top = rect.top;
-    this->left = rect.left;
+    this->size.y = rect.size.y;
+    this->size.x = rect.size.x;
+    this->position.y = rect.position.y;
+    this->position.x = rect.position.x;
 }
 
 Hitbox::Hitbox(const sf::Vector2f& pos, const sf::Vector2f& size)
 {
-    this->height = size.y;
-    this->width = size.x;
-    this->top = pos.y;
-    this->left = pos.x;
+    this->size.y = size.y;
+    this->size.x = size.x;
+    this->position.y = pos.y;
+    this->position.x = pos.x;
 }
 
 Hitbox::Hitbox(float left, float top, float width, float height)
 {
-    this->height = height;
-    this->width = width;
-    this->top = top;
-    this->left = left;
+    this->size.y = height;
+    this->size.x = width;
+    this->position.y = top;
+    this->position.x = left;
 }

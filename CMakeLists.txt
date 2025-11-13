@@ -8,7 +8,14 @@ set(SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 set(HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 
 ########## SFML ##########
-find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
+include(FetchContent)
+FetchContent_Declare(SFML
+    GIT_REPOSITORY https://github.com/SFML/SFML.git
+    GIT_TAG 3.0.2
+    GIT_SHALLOW ON
+    EXCLUDE_FROM_ALL
+    SYSTEM)
+FetchContent_MakeAvailable(SFML)
 
 ########## ECS ##########
 add_subdirectory(ECS)
@@ -22,7 +29,6 @@ add_executable( ${PROJECT_NAME}
     # components
     ${SRC_DIR}components/position.cpp
     ${SRC_DIR}components/velocity.cpp
-    ${SRC_DIR}components/sprite.cpp
     ${SRC_DIR}components/window.cpp
     ${SRC_DIR}components/hitbox.cpp
     ${SRC_DIR}components/clock.cpp
@@ -47,9 +53,9 @@ target_include_directories( ${PROJECT_NAME}
 )
 
 target_link_libraries( ${PROJECT_NAME}
-    sfml-graphics
-    sfml-audio
-    sfml-window
-    sfml-system
+    SFML::Graphics
+    SFML::Window
+    SFML::System
+    # SFML::Audio
     ECS
 )

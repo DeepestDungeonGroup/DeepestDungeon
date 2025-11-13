@@ -10,6 +10,9 @@
 
     #include <string>
     #include <map>
+    #include <unordered_map>
+    #include <SFML/Graphics/Texture.hpp>
+    #include <SFML/Graphics/Image.hpp>
 
     #include "Registry.hpp"
 
@@ -37,6 +40,12 @@ enum MAP_TYPES : char {
 static const std::map<std::string, std::string> MAPS_PATHS = {
     {"test1", "./assets/maps/test1.ddmap"},
     {"test2", "./assets/maps/test2.ddmap"},
+};
+
+static const std::unordered_map<MAP_TYPES, const sf::Texture&> TEXTURE_MAP {
+    {MAP_WALL, sf::Texture(sf::Image(sf::Vector2u(SQUARE_WIDTH, SQUARE_WIDTH), sf::Color::Red))},
+    {MAP_DOOR, sf::Texture(sf::Image(sf::Vector2u(SQUARE_WIDTH, SQUARE_WIDTH), sf::Color::Yellow))},
+    {MAP_PLAYER, sf::Texture(sf::Image(sf::Vector2u(30, 30), sf::Color::Blue))}
 };
 
 #endif
